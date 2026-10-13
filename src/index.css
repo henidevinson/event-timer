@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #120D20;
+    color: #F7F4FC;
+  }
+}
+
+.font-heading {
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Third Place: Bronze & Muted Gold, zoom-in and fade-out */
+@keyframes countdownThirdZoom {
+  0% { transform: scale(0.85); opacity: 0; }
+  18% { transform: scale(1.0); opacity: 1; }
+  78% { transform: scale(1.04); opacity: 1; }
+  100% { transform: scale(1.15); opacity: 0; }
+}
+
+/* Second Place: Metallic Silver & Lavender, smooth horizontal slide combined with fade */
+@keyframes countdownSecondSlide {
+  0% { transform: translateX(36px); opacity: 0; }
+  20% { transform: translateX(0); opacity: 1; }
+  80% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(-36px); opacity: 0; }
+}
+
+/* First Place: Brilliant Gold & Purple accents, dramatic scale-up with subtle glow */
+@keyframes countdownFirstDramatic {
+  0% { 
+    transform: scale(0.82); 
+    opacity: 0;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+  }
+  22% { 
+    transform: scale(1.0); 
+    opacity: 1;
+    text-shadow: 0 0 35px rgba(212, 175, 55, 0.65), 0 0 70px rgba(139, 92, 246, 0.45);
+  }
+  78% { 
+    transform: scale(1.06); 
+    opacity: 1;
+    text-shadow: 0 0 45px rgba(242, 214, 117, 0.8), 0 0 85px rgba(139, 92, 246, 0.55);
+  }
+  100% { 
+    transform: scale(1.22); 
+    opacity: 0;
+    text-shadow: 0 0 60px rgba(212, 175, 55, 0.9), 0 0 100px rgba(139, 92, 246, 0.7);
+  }
+}
+
+@keyframes winnerRevealUp {
+  0% { transform: translateY(16px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-countdown-third {
+  animation: countdownThirdZoom 0.96s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-countdown-second {
+  animation: countdownSecondSlide 0.96s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-countdown-first {
+  animation: countdownFirstDramatic 0.96s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-winner-reveal {
+  animation: winnerRevealUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-countdown-third,
+  .animate-countdown-second,
+  .animate-countdown-first,
+  .animate-winner-reveal {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Restrained scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #120D20;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #352746;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a3861;
+}

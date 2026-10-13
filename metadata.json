@@ -1,0 +1,6 @@
+{
+  "name": "IDEATHON LIVE",
+  "description": "Live 8-hour continuous event countdown, evaluation sheet display, and winner announcement presentation system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
